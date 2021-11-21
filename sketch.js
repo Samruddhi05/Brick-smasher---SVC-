@@ -236,10 +236,10 @@ lives.visible=false
            text( "The paddle may move horizontally and is controlled by the computer's mouse ",100,230)
            text("or the touch of a finger (in the case of touchscreen).",100,280)
            text("  The player gets 3 lives to start with; a life is lost if the ball hits the bottom of the screen.",100,330)
-           text(" When all the bricks have been destroyed, the player advances to a new harder level, with a twist. ",100,380)
-           text(" The second level has deadly bombs, and life saving hearts that decide the fate of your game.",100,430)
+           text(" When the player surpasses 500 points, they advance to a new harder level, with a twist. ",100,380)
+           text(" The second level has deadly bombs that decide the fate of your game.",100,430)
            text(" If all lives are lost, the game is over. If the player can surpass the score of 1500, they win.",100, 480)
-         text("The player can also collect power-ups along the way, in order to advance through the levels. ",100,530)
+         text("The player can also collect cool power-ups along the way, in order to advance through the levels. ",100,530)
 
        }
        
@@ -274,7 +274,7 @@ if (gameState==="play"){
 
     box3.visible=true 
 
-    if(score>=100 && lives>0){
+    if(score>=500 && lives>0){
       gameState="level2"
       tilespawn2();
       spawnBomb()
@@ -547,7 +547,7 @@ if(ball.isTouching(bombGroup)){
      text("Score: " + score, windowWidth - 300, 50);
       text(lives, 100, 50);*/
 
-      if(score>=200 && lives>0){
+      if(score>=1500 && lives>0){
         gameState = "win"
       }
 }
